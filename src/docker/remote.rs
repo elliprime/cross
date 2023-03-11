@@ -760,7 +760,7 @@ pub(crate) fn run(
         .wrap_err("when copying seccomp profile")?;
 
     // Prevent `bin` from being mounted inside the Docker container.
-    docker.args(["-v", &format!("{mount_prefix}/cargo/bin")]);
+    // docker.args(["-v", &format!("{mount_prefix}/cargo/bin")]);
 
     // When running inside NixOS or using Nix packaging we need to add the Nix
     // Store to the running container so it can load the needed binaries.

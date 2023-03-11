@@ -1081,7 +1081,7 @@ impl DockerCommandExt for Command {
         let build_command = format!(
             "PATH=\"$PATH\":\"{}/bin\":\"{}/bin\" {:?}",
             dirs.sysroot_mount_path(),
-            dirs.cargo(),
+            dirs.cargo().as_posix_absolute().unwrap_or("".to_string()),
             cmd
         );
         self.args(["sh", "-c", &build_command])

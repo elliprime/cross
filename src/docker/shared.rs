@@ -305,7 +305,7 @@ impl ToolchainDirectories {
             None => None,
         };
 
-        let cargo = mount_finder.find_mount_path(cargo);
+        // let cargo = mount_finder.find_mount_path(cargo);
         let xargo = mount_finder.find_mount_path(xargo);
 
         toolchain.set_sysroot(|p| mount_finder.find_mount_path(p));

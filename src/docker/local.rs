@@ -59,7 +59,6 @@ pub(crate) fn run(
         .wrap_err("when copying seccomp profile")?;
     docker.add_user_id(engine.kind);
 
-    println!("host path: {}, exists: {}", toolchain_dirs.cargo_host_path()?, Path::new(toolchain_dirs.cargo_host_path()?).is_dir());
     docker
         .args([
             "-v",
